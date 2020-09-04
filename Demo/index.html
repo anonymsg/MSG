@@ -16,14 +16,14 @@
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">DCVC DEMO</a>
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">MSG DEMO</a>
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#traditional">TRADITIONAL VC</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">ZERO-SHOT VC</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#duration">DURATION CONTROL</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi-speaker">MULTI-SPEAKER TTS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">ZERO-SHOT TTS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#style-recombination">STYLE RECOMBINATION</a></li>
                     </ul>
                 </div>
             </div>
@@ -31,9 +31,9 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">Non-parallel Duration Controllable Voice Conversion via Frame-level Phoneme Prediction based Information Bottleneck</h1>
+                <h1 class="masthead-heading mb-0">Multi-SpectroGAN: High-Diversity and High-Fidelity Spectrogram Generation with Adversarial Style Recombination for Speech Synthesis</h1>
                 <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Hyeong-Rae Noh, Sang-Hoon Lee, Hyun-Wook Yoon, In-Sun Hwang, Seong-Whan Lee</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">BLIND</p>
             </div>
         </header>
 
@@ -51,181 +51,675 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
-                        <p class="pre-wrap lead">Recently, several Voice Conversion (VC) methods using a simple autoencoder with a carefully designed information bottleneck have been studied. However, their performance is highly dependent on the information bottleneck with a suitable downsampling factor. Besides, such frame-by-frame conversion methods cannot convert speaking styles associated with the length of utterance, such as duration. On the other hand, Sequence-to-sequence (Seq2seq) based VC can convert them by leveraging Seq2seq modeling, but it has a slower inference speed due to generating samples in an autoregressive way. In this paper, we propose a novel Duration Controllable Voice Conversion model, called DCVC, which can perform VC with a duration transfer and control by a frame-level phoneme prediction based information bottleneck. In our experiments, DCVC shows comparable results compared with the baseline models on several objective metrics as well as outperforms them with a 3.78 MOS and a 3.83 similarity score. Also, it can smoothly control the duration while achieving an 11x speedup compared with Seq2seq-based VC in terms of the inference speed.</p>
+                        <p class="pre-wrap lead">While Generative Adversarial Networks (GANs) based neural text-to-speech (TTS) systems have shown significant improvement for neural speech synthesis, there is no TTS system to learn to synthesize speech from text sequence only with an adversarial feedback. Since adversarial feedback alone is not sufficient to train the generator, current models still require the reconstruction loss compared between ground-truth and generated mel-spectrogram directly. In this paper, we present Multi-SpectroGAN (MSG), which can train the multi-speaker model only with the adversarial feedback by conditioning a self-supervised hidden representation of generator to conditional discriminator. This leads to better guidance on generator training. In addition, we also propose the adversarial style recombination (ASR) for better generalization in unseen speaking style and transcript, which can learn latent representations of the combined style embedding from multiple mel-spectrogram. Trained with ASR and feature matching, the MSG synthesizes high-diversity mel-spectrogram by controlling and mixing the individual speaking style (e.g., duration, pitch, and energy). The result also shows that the MSG synthesizes high-fidelity mel-spectrogram which has almost the same naturalness MOS score with ground-truth mel-spectrogram.</p>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <section class="page-section bg-primary text-white mb-0" id="traditional">
-            <div class="container">
+        <section class="page-section bg-primary text-white mb-0" id="multi-speaker">
+            <div class="container-fluid">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">TRADITIONAL VC</h2>
+                    <h2 class="page-section-heading d-inline-block text-white">MULTI-SPEAKER TTS</h2>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom"></div>
                 </div>
+
+                <div class="text-left">
+                    <h3>Blank</h3>
+                </div>
+                
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-12 ml-auto">
+                    <div class="col-lg-auto ml-auto">
+                        <!-- p301 -->
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p301 (Female)</p>
+                                  <div class="text-left">Script : <i>There is, according to legend, a boiling pot of gold at one end.</i></div>
+                              </th>
                             </tr>
                           </thead>
                           <tbody>
                             <!-- Male-to-male & female-->
                             <tr>
-                              <td rowspan="8" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/p227_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="4" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/StarGAN-VC_p227_005-to-p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/AutoVC_p227_005-to-p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/Seq2seq-VC_p227_005-to-p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/DCVC_p227_005-to-p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="4" style="vertical-align: top;"><p>p303 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/StarGAN-VC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/AutoVC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/Seq2seq-VC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/DCVC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p301_009.npy_gen.png" width="80%">
 
-                            <!-- Female-to-male -->
-                            <!-- Male-to-male -->
-                            <tr>
-                              <td rowspan="8" style="vertical-align: top;"><p>p303 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/p303_009.wav" type="audio/wav" />
-                                </audio>
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td rowspan="4" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/p227_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/StarGAN-VC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/AutoVC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/Seq2seq-VC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/DCVC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-male -->
-                            <tr>
-                              <td rowspan="4" style="vertical-align: top;"><p>p228 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/StarGAN-VC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/AutoVC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p243 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p243 (Male)</p>
+                                  <div class="text-left">Script : <i>Ask her to bring these things with her from the store.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/Seq2seq-VC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p228 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p228 (Female)</p>
+                                  <div class="text-left">Script : <i>There is, according to legend, a boiling pot of gold at one end.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/DCVC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p237 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p237 (Male)</p>
+                                  <div class="text-left">Script : <i>If the red of the second bow falls upon the green of the first, the result is to give a bow with an abnormally wide yellow band, since red and green light when mixed form yellow.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p229 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p229 (Female)</p>
+                                  <div class="text-left">Script : <i>The actual primary rainbow observed is said to be the effect of super-imposition of a number of bows.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p252 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p252 (Male)</p>
+                                  <div class="text-left">Script : <i>There is, according to legend, a boiling pot of gold at one end.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                           </tbody>
@@ -236,11 +730,11 @@
         </section>
 
         <!-- Zero-shot VC -->
-        <section class="page-section" id="zeroshot">
-            <div class="container">
+        <section class="page-section bg-info text-white mb-0" id="zeroshot">
+            <div class="container-fluid">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">ZERO-SHOT VC</h2>
+                    <h2 class="page-section-heading d-inline-block">ZERO-SHOT TTS</h2>
                 </div>
 
                 <div class="divider-custom divider-light">
@@ -248,431 +742,656 @@
                 </div>
 
                 <div class="text-left">
-                    <h3>SEEN-TO-UNSEEN</h3>
+                    <h3>Blank</h3>
                 </div>
 
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-12 ml-auto">
-                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                    <div class="col-lg-auto ml-auto">
+                        <!-- p236 -->
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p236 (Female)</p>
+                                  <div class="text-left">Script : <i>Some have accepted it as a miracle without physical explanation.</i></div>
+                              </th>
                             </tr>
                           </thead>
                           <tbody>
                             <!-- Male-to-male & female-->
                             <tr>
-                              <td rowspan="6" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2M/p232_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2M/p246_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2M/AutoVC_p232_012-to-p246_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2M/Seq2seq-VC_p232_012-to-p246_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2M/DCVC_p232_012-to-p246_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2F/p335_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2F/AutoVC_p232_012-to-p335_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2F/Seq2seq-VC_p232_012-to-p335_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/M2F/DCVC_p232_012-to-p335_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p236_013.npy_gen.png" width="80%">
 
-                            <!-- Female-to-male -->
-                            <!-- Male-to-male -->
-                            <tr>
-                              <td rowspan="6" style="vertical-align: top;"><p>p228 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2M/p228_014.wav" type="audio/wav" />
-                                </audio>
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2M/p246_014.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2M/AutoVC_p228_014-to-p246_014.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2M/Seq2seq-VC_p228_014-to-p246_014.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2M/DCVC_p228_014-to-p246_014.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-male -->
-                            <tr>
-                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2F/p335_014.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2F/AutoVC_p228_014-to-p335_014.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2F/Seq2seq-VC_p228_014-to-p335_014.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/S2U/F2F/DCVC_p228_014-to-p335_014.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!-- Unseen to seen conversion -->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-
-                <div class="text-left">
-                    <h3>UNSEEN-TO-SEEN</h3>
-                </div>
-
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-12 ml-auto">
-                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <!-- p241 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p241 (Female)</p>
+                                  <div class="text-left">Script : <i>People look, but no one ever finds it.</i></div>
+                              </th>
                             </tr>
                           </thead>
                           <tbody>
                             <!-- Male-to-male & female-->
                             <tr>
-                              <td rowspan="6" style="vertical-align: top;"><p>p246 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2M/p246_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="3" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2M/p232_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2M/AutoVC_p246_008-to-p232_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2M/Seq2seq-VC_p246_008-to-p232_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2M/DCVC_p246_008-to-p232_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="3" style="vertical-align: top;"><p>p228 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2F/p228_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2F/AutoVC_p246_008-to-p228_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2F/Seq2seq-VC_p246_008-to-p228_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/M2F/DCVC_p246_008-to-p228_008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p241_010.npy_gen.png" width="80%">
 
-                            <!-- Female-to-male -->
-                            <!-- Male-to-male -->
-                            <tr>
-                              <td rowspan="6" style="vertical-align: top;"><p>p335 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2M/p335_021.wav" type="audio/wav" />
-                                </audio>
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td rowspan="3" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2M/p232_021.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2M/AutoVC_p335_021-to-p232_021.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2M/Seq2seq-VC_p335_021-to-p232_021.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2M/DCVC_p335_021-to-p232_021.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-male -->
-                            <tr>
-                              <td rowspan="3" style="vertical-align: top;"><p>p228 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2F/p228_021.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2F/AutoVC_p335_021-to-p228_021.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2F/Seq2seq-VC_p335_021-to-p228_021.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2S/F2F/DCVC_p335_021-to-p228_021.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p241_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p241_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!-- Unseen to unseen conversion -->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-
-                <div class="text-left">
-                    <h3>UNSEEN-TO-UNSEEN</h3>
-                </div>
-
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-12 ml-auto">
-                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <!-- p240 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p240 (Female)</p>
+                                  <div class="text-left">Script : <i>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i></div>
+                              </th>
                             </tr>
                           </thead>
                           <tbody>
                             <!-- Male-to-male & female-->
                             <tr>
-                              <td rowspan="6" style="vertical-align: top;"><p>p245 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2M/p245_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2M/p246_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2M/AutoVC_p245_010-to-p246_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2M/Seq2seq-VC_p245_010-to-p246_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2M/DCVC_p245_010-to-p246_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2F/p335_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2F/AutoVC_p245_010-to-p335_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2F/Seq2seq-VC_p245_010-to-p335_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/M2F/DCVC_p245_010-to-p335_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p240_011.npy_gen.png" width="80%">
 
-                            <!-- Female-to-male -->
-                            <!-- Male-to-male -->
-                            <tr>
-                              <td rowspan="6" style="vertical-align: top;"><p>p261 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2M/p261_003.wav" type="audio/wav" />
-                                </audio>
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2M/p246_003.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2M/AutoVC_p261_003-to-p246_003.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2M/Seq2seq-VC_p261_003-to-p246_003.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2M/DCVC_p261_003-to-p246_003.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-male -->
-                            <tr>
-                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2F/p335_003.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2F/AutoVC_p261_003-to-p335_003.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2F/Seq2seq-VC_p261_003-to-p335_003.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p246 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p246 (Female)</p>
+                                  <div class="text-left">Script : <i>Since then physicists have found that it is not reflection, but refraction by the raindrops which causes the rainbows.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                             <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/zeroshot/U2U/F2F/DCVC_p261_003-to-p335_003.wav" type="audio/wav" />
-                                </audio>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p262 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p262 (Female)</p>
+                                  <div class="text-left">Script : <i>When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p262_006.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p262_006.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p363 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p363 (Female)</p>
+                                  <div class="text-left">Script : <i>Some have accepted it as a miracle without physical explanation.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR1</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR3</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG + ASR4</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
                               </td>
                             </tr>
                           </tbody>
@@ -682,11 +1401,11 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="duration">
-            <div class="container">
+        <section class="page-section bg-primary text-white mb-0" id="style-recombination">
+            <div class="container-fluid">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">DURATION CONTROL</h2>
+                    <h2 class="page-section-heading d-inline-block text-white">STYLE RECOMBINATION</h2>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -695,191 +1414,7 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Male-to-male & female-->
-                            <tr>
-                              <td rowspan="10" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="5" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>VERY SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-1.25.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-1.1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>NORMAL</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-0.9.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VERY FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-0.75.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="5" style="vertical-align: top;"><p>p303 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p303_016.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>VERY SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-1.25.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-1.1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>NORMAL</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-0.9.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VERY FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-0.75.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
 
-                            <tr>
-                              <td rowspan="10" style="vertical-align: top;"><p>p303 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="5" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>VERY SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-1.25.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-1.1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>NORMAL</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-0.9.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VERY FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-0.75.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="5" style="vertical-align: top;"><p>p228 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>VERY SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-1.25.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>SLOW</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-1.1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>NORMAL</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-1.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-0.9.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VERY FAST</p>
-                                <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-0.75.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
